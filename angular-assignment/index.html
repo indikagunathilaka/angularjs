@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="AngularJS Assignment-Movie Application">
+        <meta name="author" content="Indika Gunathilaka">
+        <title>AngularJS Assignment - Movie Application</title>
+        
+        <!-- Bootstrap Core CSS -->
+        <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
+        <!--<link href="js/lib/bootstrap.css" rel="stylesheet">-->
+        <!-- Custom CSS -->
+        <link href="css/sb-admin-2.css" rel="stylesheet">
+        <!-- Custom Fonts -->
+        <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    </head>
+    <body ng-app="movieApp" ng-controller="movieController">
+        <div id="wrapper">
+            <!-- Navigation -->
+            <nav class="navbar navbar-default navbar-static-top" role="navigation" style="margin-bottom: 0">
+                <div ng-include src="headerSrc"></div>
+                <div ng-include src="leftMenuSrc"></div>
+            </nav>
+            
+            <!-- Page Content -->
+            <div id="page-wrapper">
+                <div ng-view></div>
+            </div>
+            <!--  /#page-wrapper -->
+            
+        </div>
+        <!--  /#wrapper -->
+        
+        <!-- 3rd party libraries -->
+        <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.1/angular.js"></script>
+        <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.1/angular-route.js"></script>
+        <!-- Custom scripts -->
+        <script src="js/app.js"></script>
+        <script src="js/routers/router.js"></script>
+        <script src="js/controllers/movies/movieController.js"></script>
+        <script src="js/controllers/movies/movieListController.js"></script>
+        <script src="js/controllers/movies/movieDetailsController.js"></script>
+        <script src="js/services/movieService.js"></script>
+        <script src="js/services/languageService.js"></script>
+        <script src="js/directives/uniqueCharacterName.js"></script>
+    </body>
+    
+</html>

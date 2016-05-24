@@ -1,0 +1,32 @@
+<div class="row">
+    <div class="col-lg-10">
+        <h2 class="page-header">My Movies</h2>
+    </div>
+    <div class="col-lg-2">
+        <a href="#/add" class="btn btn-default page-header " role="button">Add Movie</a>
+    </div>
+</div>
+<div ng-show="!movies.length">
+    <h3>No movies available yet.</h3>
+</div>
+<div ng-repeat="movie in movies|orderBy: '-releaseYear'" class="row">
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <div class="row">
+                <div class="col-sm-4">
+                    <h4>{{movie.title}} ({{movie.releaseYear}})</h4>
+                </div>
+                <div class="col-sm-4"></div>
+                <div class="col-sm-4">
+                    <span ng-repeat="rating in getNumber(movie.rating)"><i class="fa fa-star"></i></span>
+                </div>
+            </div>
+        </div>
+        <div class="panel-body">
+            <p>{{movie.description}}</p>
+            <div class="text-right">
+                <a href="#/movie/{{movie.id}}" class="btn btn-default" role="button">Detail</a>
+            </div>
+        </div>
+    </div>
+</div>

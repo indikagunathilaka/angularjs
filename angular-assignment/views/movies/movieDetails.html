@@ -1,0 +1,44 @@
+<div class="row">
+    <div class="col-lg-12">
+        <h2 class="page-header">Movie Details</h2>
+    </div>
+</div>
+<div ng-show="!currentMovie">
+    <h3>Sorry! Please select a right movie for the details.</h3>
+</div>
+<div ng-show="currentMovie">
+    <div class="row">
+        <div class="col-lg-6"><h4>{{currentMovie.title}}</h4></div>
+        <div class="col-lg-4">Rating <span ng-repeat="rating in getNumber(currentMovie.rating)"><i class="fa fa-star"></i></span></div>
+    </div>
+    <br/>
+    <div class="row">
+        <div class="col-lg-12">{{currentMovie.description}}</div>
+    </div>
+    <br/>
+    <div class="row">
+        <div class="col-lg-2">Directed by:</div>
+        <div class="col-lg-8">{{currentMovie.director}}</div>
+    </div>
+    <div class="row">
+        <div class="col-lg-2">Release year:</div>
+        <div class="col-lg-8">{{currentMovie.releaseYear}}</div>
+    </div>
+    <div class="row">
+        <div class="col-lg-2">Language:</div>
+        <div class="col-lg-8">{{currentMovie.language.name}}</div>
+    </div>
+    <br/>
+    <div ng-show="currentMovie.characterList.length">
+        <div class="row">
+            <div class="col-lg-12"><h4>Characters</h4></div>
+        </div>
+        <div class="row">
+            <div class="col-lg-12">
+                <ul class="list-group">
+                    <li ng-repeat="character in currentMovie.characterList|orderBy: 'name'" class="list-group-item"><span>{{character.name}} ({{character.actor.name}})</span></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,19 @@
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <div class="row">
+            <div class="col-sm-4">
+                <h4>{{data.title}} ({{data.releaseYear}})</h4>
+            </div>
+            <div class="col-sm-4"></div>
+            <div class="col-sm-4">
+                <span ng-repeat="rating in number({count:data.rating})"><i class="fa fa-star"></i></span>
+            </div>
+        </div>
+    </div>
+    <div class="panel-body">
+        <p>{{data.description}}</p>
+        <div class="text-right">
+            <a href="#/movie/{{data.id}}" class="btn btn-default" role="button">Detail</a>
+        </div>
+    </div>
+</div>

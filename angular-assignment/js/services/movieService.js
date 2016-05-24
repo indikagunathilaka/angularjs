@@ -26,5 +26,15 @@ movieApp.factory('movieService', function() {
         return true;
     }
     
+    movies.checkUniqueTitle = function(movieTitle) {
+        for(var i=0; i<movies.list; i++) {
+            var movie = movies.list[i];
+            if(movie.title == movieTitle) {
+                return false;
+            }
+        }
+        return true;
+    }
+    
     return movies;
 });

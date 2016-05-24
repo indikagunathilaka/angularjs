@@ -9,7 +9,6 @@ movieApp.directive('uniqueCharacterName', ['movieService', function(movieService
         var currentValue = element.val();
         
         var unique = movieService.checkUniqueCharacterName(keyProperty, currentValue);
-        console.log('Unique:' + unique);
         ngModel.$setValidity('unique', unique);
       });
     }

@@ -10,6 +10,8 @@ movieApp.config(['$routeProvider', function($routeProvider) {
     }).when('/movie/:id', {
         templateUrl: '/views/movies/movieDetails.html',
         controller: 'movieDetailsController'
+    }).when('/mockups', {
+        templateUrl: '/views/mockUps.html'  
     }).otherwise({
         redirectTo: '/'
     });
